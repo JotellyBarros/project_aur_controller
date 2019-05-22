@@ -1,0 +1,27 @@
+rrbot:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Position Controllers ---------------------------------------
+  motor_x_position_controller:
+    type: position_controllers/JointPositionController
+    joint: 'base_to_vertical_link'
+    pid: {p: 0.01, i: 0.01, d: 0.01}
+
+  motor_y_position_controller:
+    type: position_controllers/JointPositionController
+    joint: 'base_to_horizontal_link'
+    pid: {p: 0.01, i: 0.01, d: 0.01}
+
+  horizontal_rotation_position_controller:
+    type: position_controllers/JointPositionController
+    joint: 'base_to_horizontal_rotation_link'
+    pid: {p: 0.01, i: 0.01, d: 0.01}
+
+# gazebo_ros_control:
+#   pid_gains:   
+#     base_to_vertical_link: {p: 0.01, i: 0.01, d: 0.01}
+#     base_to_horizontal_link: {p: 0.01, i: 0.01, d: 0.01}
+#     base_to_horizontal_rotation_link: {p: 0.01, i: 0.01, d: 0.01}
