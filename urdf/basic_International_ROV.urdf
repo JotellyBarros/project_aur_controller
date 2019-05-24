@@ -21,7 +21,7 @@
         <visual>
             <origin xyz="-0.5 0 0" rpy="0 0 0"/>
             <geometry>
-                <mesh filename="file://$(find project_aur_controller)/meshes/basic_ROV.stl" scale="0.5 0.5 0.5"/>
+                <mesh filename="file://$(find project_aur_controller)/meshes/Model_ROV.stl" scale="0.5 0.5 0.5"/>
             </geometry>
         </visual>
         <collision>
@@ -136,7 +136,7 @@
                 </noise>
             </camera>
             <camera name="right">
-                <pose>0 -0.12 0 0 0 0</pose>
+                <!--<pose>0 -0.12 0 0 0 0</pose> -->
                 <horizontal_fov>1.3962634</horizontal_fov>
                 <image>
                     <width>640</width>
