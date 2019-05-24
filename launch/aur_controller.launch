@@ -35,8 +35,7 @@
     <!-- Start RViz -->
     <node name="rviz" pkg="rviz" type="rviz" output="screen" args="-d $(find project_aur_controller)/rviz/controller_demo.rviz"/>
 
-    <!-- load the orb_slam_ros -->
-    <!--
+    <!-- load the orb_slam_ros -->   
     <node name="orb_slam_ros" pkg="orb_slam_ros" type="stereo_node_KITTI" args="$(find project_aur_controller)/config/rov_ZED.yaml $(find orb_slam_ros)/Vocabulary/ORBvoc.bin" output="screen">
         <remap from="/camera/left/image_raw" to="/myCameraStereo/stereo_camera/left/image_raw" />
         <remap from="/camera/right/image_raw" to="/myCameraStereo/stereo_camera/right/image_raw" />
@@ -48,8 +47,11 @@
         <param name="camera_frame_id" type="string" value="cameras" />
         <param name="min_num_kf_in_map" type="int" value="5" />
     </node>
-    -->
-    
+
+    <include file="$(find rosbridge_server)/launch/rosbridge_tcp.launch">
+        <arg name="bson_only_mode" value="True"/>
+    </include>
+
     <!-- load the rqt_console -->
     <node name="rqt_gui" pkg="rqt_gui" type="rqt_gui"/>
 
