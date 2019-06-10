@@ -7,6 +7,8 @@
     <arg name="debug" default="false"/>
     <arg name="model" default="$(find project_aur_controller)/urdf/basic_International_ROV.urdf"/>
 
+    <env name="DISPLAY" value="=-1" />
+
     <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="debug" value="$(arg debug)" />
@@ -51,6 +53,10 @@
     <include file="$(find rosbridge_server)/launch/rosbridge_tcp.launch">
         <arg name="bson_only_mode" value="True"/>
     </include>
+
+    <node name="unreal_node" pkg="mccr_gazebo" type="exec_unreal.sh" />
+
+    deve copiar esse arquivo para pasta  exec_unreal.sh
 
     <!-- load the rqt_console -->
     <node name="rqt_gui" pkg="rqt_gui" type="rqt_gui"/>

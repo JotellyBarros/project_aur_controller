@@ -32,6 +32,15 @@
         </collision>
     </link>
 
+    <!-- Unreal link -->
+    <gazebo reference="cameras">
+        <visual>
+            <plugin name="uasset_aur" filename="libUnrealGazebo.so">
+                <uasset>mecasset</uasset>
+            </plugin>
+        </visual>
+    </gazebo>
+
     <link name="horizontal_rotation_link">
         <inertial>
             <origin xyz="0 0 0" rpy="0 0 0"/>

@@ -11,6 +11,7 @@
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>orb_slam_ros</build_depend>
 
+  <run_depend>gzweb</run_depend>
   <run_depend>controller_manager</run_depend>
   <run_depend>diff_drive_controller</run_depend>
   <run_depend>gazebo_ros</run_depend>
